@@ -9,6 +9,9 @@ void bubble_sort(short *array, int numbers) {
     int j;
     int backup;
 
+    short *new = copy_array(array);
+
+
     for (i = 0; i < numbers - 1; ++i) {
         for (j = 0; j < numbers - i - 1; ++j) {
             // compare two nearby elements
