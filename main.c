@@ -9,11 +9,13 @@
 #include <time.h>
 #include "sorting_algorithms/merge_sort.h"
 #include "sorting_algorithms/insertion_sort.h"
+#include "sorting_algorithms/bubble_sort.h"
 #include "shared/create_array.h"
 
 int main(void) {
-	printf("sorting algo\n");
     srand(time(NULL));
+	printf("sorting algo\n");
+
 
 	merge_sort();
     short *short_array = create_arrray(8);
@@ -21,6 +23,8 @@ int main(void) {
     short *large_array = create_arrray(64);
 
     insertion_sort(short_array);
+
+    bubble_sort(short_array, 10);
 
     free(short_array);
     free(medium_array);
