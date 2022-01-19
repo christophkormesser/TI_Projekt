@@ -13,12 +13,6 @@ void print_array(short *a) {
 	printf("]\n");
 }
 
-void copy_array(int *from, int *to, int start, int end) {
-    for (int i = start; i <= end; i+= 1) {
-        from[i] = to[i];
-    }
-}
-
 void merge_and_sort(int i, int j, int *a, int *b) {
     if (j <= i) {
     	return;
