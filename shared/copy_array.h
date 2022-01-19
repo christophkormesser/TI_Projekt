@@ -10,6 +10,6 @@
 
 #define MAX_INT 65536
 
-short *copy_arrray(short *array);
+short *copy_array(short *array);
 
 #endif //TI_PROJEKT_COPY_ARRAY_H

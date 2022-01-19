@@ -7,7 +7,7 @@
 
 int insertion_sort(short *array){
     printf("\n\n");
-    short *new = copy_arrray(array);
+    short *new = copy_array(array);
     short *sorted = malloc(sizeof(new));
 
     short smallest = SHRT_MAX;

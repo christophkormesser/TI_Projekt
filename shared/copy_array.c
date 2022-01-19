@@ -4,7 +4,7 @@
 
 #include "copy_array.h"
 
-short *copy_arrray(short *array){
+short *copy_array(short *array){
     short *cpy_array = malloc(sizeof(*array));
     printf("\ncopied array:\n[  ");
     int i = 0;

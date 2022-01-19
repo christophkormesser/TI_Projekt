@@ -11,11 +11,11 @@
 
 // short int:       -32.767 - 32.767
 // unsigned int:    0 - 65.535
-short *create_arrray(unsigned int size){
+short *create_array(unsigned int size){
     short *array = malloc(sizeof(short) * size);
     printf("\nUnsorted array:\n[  ");
     for(unsigned int i = 0; i < size; i++){
-        array[i] = (rand() % MAX_INT) - 32768;
+        array[i] = (rand() % MAX_INT) - 32767;
         printf("%hi  ", array[i]);
     }
     printf("]");
