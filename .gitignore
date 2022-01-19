@@ -1,6 +1,7 @@
 .settings
 .cproject
 .project
+.metadata
 CMakeLists.txt
 .idea
 /Debug

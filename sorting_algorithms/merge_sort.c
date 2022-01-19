@@ -5,12 +5,17 @@ int random_number(int min, int max) {
 	return num;
 }
 
-void print_array(int l, int *a, char t[]) {
+void print_array(short *a) {
 	printf("Print List\n");
-	for (int i = 0; i < l; i += 1) {
-		printf("%s %4d ", t, a[i]);
+
+	int l = sizeof(a);
+
+	printf("[ ");
+	for(int i = 0; i < l; i += 1) {
+		printf("%d ", a[i]);
 	}
-	printf("\n");
+
+	printf("]\n");
 }
 
 void create_array(int l, int a[]) {
@@ -60,7 +65,8 @@ void merge_and_sort(int i, int j, int *a, int *b) {
     copy_array(a, b, i, j);
 }
 
-int merge_sort(void) {
+int merge_sort(short *array) {
+	/*
 	int input = 16, a[64], b[64];
 
 	srand(time(NULL));
@@ -71,7 +77,10 @@ int merge_sort(void) {
 
 	merge_and_sort(0, input-1, a, b);
 
-	print_array(input, b, "");
+	print_array(input, b, ""); */
+	printf("\nmerge sort\n");
+
+	print_array(array);
 
 	return 0;
 }
