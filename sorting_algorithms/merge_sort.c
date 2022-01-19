@@ -1,10 +1,5 @@
 #include "merge_sort.h"
 
-int random_number(int min, int max) {
-	int num = rand() % (max-min) + min;
-	return num;
-}
-
 void print_array(short *a) {
 	printf("Print List\n");
 
@@ -16,18 +11,6 @@ void print_array(short *a) {
 	}
 
 	printf("]\n");
-}
-
-void create_array(int l, int a[]) {
-	for (int i=0; i<l; i+=1) {
-		a[i] = random_number(0, 100);
-	}
-}
-
-void copy_array(int *from, int *to, int start, int end) {
-    for (int i = start; i <= end; i+= 1) {
-        from[i] = to[i];
-    }
 }
 
 void merge_and_sort(int i, int j, int *a, int *b) {
