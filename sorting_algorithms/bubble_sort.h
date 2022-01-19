@@ -1,5 +1,5 @@
 //
-// Created by jahmad on 06/01/2022.
+// Author: Juneyd Ahmad
 //
 
 #ifndef TI_PROJEKT_BUBBLE_SORT_H
