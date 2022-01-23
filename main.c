@@ -10,6 +10,7 @@
 #include "sorting_algorithms/merge_sort.h"
 #include "sorting_algorithms/insertion_sort.h"
 #include "sorting_algorithms/bubble_sort.h"
+#include "sorting_algorithms/quick_sort.h"
 #include "shared/create_array.h"
 
 int main(void) {
@@ -25,6 +26,8 @@ int main(void) {
     bubble_sort(short_array);
 
 	merge_sort(short_array);
+
+	quick_sort(short_array, 8);
 
     free(short_array);
     free(medium_array);

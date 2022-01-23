@@ -38,11 +38,13 @@ void quicksort(short *array, int first, int last) {
 		j=last;
 
 		while(i<j) {
-			while(array[i]<=array[pivot]&&i<last)
+			while(array[i] <= array[pivot] && i < last)
 				i++;
-			while(array[j]>array[pivot])
+
+			while(array[j] > array[pivot])
 				j--;
-			if(i<j) {
+
+			if(i < j) {
 				temp = array[i];
 				array[i] = array[j];
 				array[j] = temp;
