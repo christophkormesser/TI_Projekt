@@ -23,7 +23,7 @@ int main(void) {
 
     insertion_sort(short_array);
 
-    bubble_sort(short_array);
+    bubble_sort(short_array, 8);
 
     free(short_array);
     free(medium_array);
