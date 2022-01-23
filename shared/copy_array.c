@@ -6,13 +6,13 @@
 
 short *copy_array(short *array){
     short *cpy_array = malloc(sizeof(*array));
-    printf("\ncopied array:\n[  ");
+    // printf("\ncopied array:\n[  ");
     int i = 0;
     int n = sizeof(array);
 
     while(i < n){
         cpy_array[i] = array[i];
-        printf("%hi\t", cpy_array[i]);
+        // printf("%hi\t", cpy_array[i]);
         i++;
     }
     printf("]");
