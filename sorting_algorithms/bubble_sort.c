@@ -5,11 +5,17 @@
 #include "bubble_sort.h"
 
 void bubble_sort(short *array) {
-    printf("[1].[1].[c] - MICHAEL BUBLE SORT:");
+    printf("[1].[1].[c] - MICHAEL BUBLE SORT:\n");
     clock_t start_t, end_t;
     double total_t;
     short *cpyArr = copy_array(array);
 
+    /*
+    for (int i = 0; i < 64; ++i) {
+        printf("%d ", cpyArr[i]);
+    }
+    printf("\n");
+*/
     start_t = clock();
     int sort = 1;
     do{
