@@ -24,6 +24,7 @@ int main(void) {
     short *bub2k_array = create_array(2000);
 
     //insertion_sort(short_array);
+    double ins_runtime = insertion_sort(short_array, 8);
 
     printf("\n\n1. Bubble Sort - [8]\n");
     bubble_sort(large_array);
@@ -43,6 +44,12 @@ int main(void) {
     free(medium_array);
     free(large_array);
     free(bub2k_array);
+
+    printf("\nRUNTIMES\n------\n");
+    printf("Insertion Sort: %lf secs\n", ins_runtime);
+    printf("Bubble Sort: \n");
+    printf("Merge Sort: \n");
+    printf("Quick Sort: \n");
 
     printf("search algos\n");
 	return 0;
