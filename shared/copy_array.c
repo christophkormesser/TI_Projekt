@@ -15,7 +15,7 @@ short *copy_array(short *array){
         // printf("%hi\t", cpy_array[i]);
         i++;
     }
-    printf("]");
+    // printf("]");
 
     return cpy_array;
 }
