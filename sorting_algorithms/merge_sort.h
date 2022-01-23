@@ -7,3 +7,7 @@
 int merge_sort();
 
 #endif
+
+#ifndef COPY_ARRAY_H
+#define COPY_ARRAY_H
+#endif

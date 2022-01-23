@@ -13,7 +13,14 @@ void print_array(short *a) {
 	printf("]\n");
 }
 
-void merge_and_sort(int i, int j, int *a, int *b) {
+void local_copy_array(short *from, short *to, int start, int end) {
+    for (int i = start; i <= end; i+= 1) {
+        from[i] = to[i];
+    }
+}
+
+void merge_and_sort(int i, int j, short *a, short *b) {
+
     if (j <= i) {
     	return;
     }
@@ -45,7 +52,7 @@ void merge_and_sort(int i, int j, int *a, int *b) {
     // print_array(j-i, a, "a");
     // print_array(j-i, b, "b");
 
-    copy_array(a, b, i, j);
+    local_copy_array(a, b, i, j);
 }
 
 int merge_sort(short *array) {
@@ -61,7 +68,12 @@ int merge_sort(short *array) {
 	merge_and_sort(0, input-1, a, b);
 
 	print_array(input, b, ""); */
-	printf("\nmerge sort\n");
+
+	short b[sizeof(array)];
+
+	merge_and_sort(0, sizeof(array)-1, array, b);
+
+	printf("\nMerge sort\n");
 
 	print_array(array);
 
