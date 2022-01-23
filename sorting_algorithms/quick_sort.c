@@ -6,13 +6,7 @@
  */
 
 #include "quick_sort.h"
-
-/*
-int quick_sort(short *array) {
-	printf("quick sort %p\n", array);
-
-	return 0;
-} */
+#include "copy_array.h"
 
 void qs_print_array(short *a) {
 	printf("Print List\n");
@@ -31,11 +25,11 @@ void quicksort(short *array, int first, int last) {
 
 	int i, j, pivot, temp;
 
-	if(first<last) {
+	if(first < last) {
 
-		pivot=first;
-		i=first;
-		j=last;
+		pivot = first;
+		i = first;
+		j = last;
 
 		while(i<j) {
 			while(array[i] <= array[pivot] && i < last)
@@ -62,11 +56,17 @@ void quicksort(short *array, int first, int last) {
 
 int quick_sort(short *array, int l) {
 
-	printf("\nQuick Sort\n");
+	printf("\nQuick Sort - %d\n", l);
 
-	quicksort(array, 0, l-1);
+    short *sorted = malloc(sizeof(array));
+    sorted = copy_array(array);
 
-	qs_print_array(array);
+	quicksort(sorted, 0, l-1);
+
+    printf("\nSorted:::\n");
+    for(int q = 0; q < l; q++){
+        printf("%hi\t", sorted[q]);
+    }
 
 	return 0;
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int merge_sort(short *array);
+int merge_sort(short *array, int l);
 
 #endif
 

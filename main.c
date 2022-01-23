@@ -10,22 +10,26 @@
 #include "sorting_algorithms/merge_sort.h"
 #include "sorting_algorithms/insertion_sort.h"
 #include "sorting_algorithms/bubble_sort.h"
-#include "sorting_algorithms/quick_sort.h"
+// #include "sorting_algorithms/quick_sort.h"
 #include "shared/create_array.h"
 
 int main(void) {
 	printf("sorting algos\n");
     srand(time(NULL));
 
-    short *short_array = create_array(8);
-    short *medium_array = create_array(16);
-    short *large_array = create_array(64);
+    short *short_array = create_array(8, -32767, 32767);
+    short *medium_array = create_array(16, -32767, 32767);
+    short *large_array = create_array(64, -32767, 32767);
 
-    insertion_sort(short_array);
+    printf("\n%d\n", rand());
 
-    bubble_sort(short_array);
+	// quick_sort(short_array, 8);
 
-	merge_sort(short_array);
+    // insertion_sort(short_array);
+
+    // bubble_sort(short_array);
+
+	merge_sort(short_array, 8);
 
 	quick_sort(short_array, 8);
 

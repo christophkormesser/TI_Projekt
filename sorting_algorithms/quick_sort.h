@@ -6,3 +6,7 @@
 int quick_sort(short *array, int length);
 
 #endif
+
+#ifndef COPY_ARRAY_H
+#define COPY_ARRAY_H
+#endif

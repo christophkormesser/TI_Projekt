@@ -1,6 +1,7 @@
 #include "merge_sort.h"
+#include "copy_array.h"
 
-void print_array(short *a) {
+void ms_print_array(short *a) {
 	printf("Print List\n");
 
 	int l = sizeof(a);
@@ -55,7 +56,7 @@ void merge_and_sort(int i, int j, short *a, short *b) {
     local_copy_array(a, b, i, j);
 }
 
-int merge_sort(short *array) {
+int merge_sort(short *array, int l) {
 	/*
 	int input = 16, a[64], b[64];
 
@@ -69,13 +70,18 @@ int merge_sort(short *array) {
 
 	print_array(input, b, ""); */
 
-	short b[sizeof(array)];
+	printf("\nMerge sort - %d\n", l);
 
-	merge_and_sort(0, sizeof(array)-1, array, b);
+    short *sorted = malloc(sizeof(array));
+    sorted = copy_array(array);
+    short *b = malloc(sizeof(array));
 
-	printf("\nMerge sort\n");
+	merge_and_sort(0, l-1, sorted, b);
 
-	print_array(array);
+    printf("\nSorted:::\n");
+    for(int q = 0; q < l; q++){
+        printf("%hi\t", sorted[q]);
+    }
 
 	return 0;
 }
