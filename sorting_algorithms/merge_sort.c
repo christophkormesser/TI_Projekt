@@ -72,9 +72,10 @@ int merge_sort(short *array, int l) {
 
 	printf("\nMerge sort - %d\n", l);
 
-    short *sorted = malloc(sizeof(array));
-    sorted = copy_array(array);
+    short *sorted = copy_array(array);
     short *b = malloc(sizeof(array));
+
+    // short *new = copy_array(array);
 
 	merge_and_sort(0, l-1, sorted, b);
 

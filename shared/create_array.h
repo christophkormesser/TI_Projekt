@@ -8,7 +8,13 @@
 #include <stdlib.h>     // rand()
 #include <stdio.h>      // printf()
 
-short *create_array(unsigned int size, int min, int max);
+enum Direction {
+	RANDOM = 0,
+	ASC = 1,
+	DSC = 2
+} direction;
+
+short *create_array(unsigned int size, int min, int max, enum Direction direction);
 
 #endif //TI_PROJEKT_CREATE_ARRAY_H
 
