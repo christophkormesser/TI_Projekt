@@ -21,7 +21,7 @@ int main(void) {
     short *medium_array = create_array(16);
     short *large_array = create_array(64);
 
-    insertion_sort(short_array);
+    insertion_sort(short_array, 8);
 
     bubble_sort(short_array, 8);
 

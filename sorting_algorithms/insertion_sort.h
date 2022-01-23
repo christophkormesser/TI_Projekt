@@ -12,6 +12,6 @@
 
 #include "../shared/copy_array.h"
 
-int insertion_sort(short *array);
+int insertion_sort(short *array, int length);
 
 #endif //TI_PROJEKT_INSERTION_SORT_H
