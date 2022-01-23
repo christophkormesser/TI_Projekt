@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_INT 65536
+// #define MAX_INT 65536
 
 short *copy_array(short *array);
 
