@@ -10,6 +10,6 @@
 #include <string.h>
 #include "../shared/copy_array.h"
 
-int bubble_sort(short *array);
+void bubble_sort(short *array, int length);
 
 #endif //TI_PROJEKT_BUBBLE_SORT_H

@@ -9,9 +9,10 @@
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
+#include <time.h>
 
 #include "../shared/copy_array.h"
 
-int insertion_sort(short *array);
+double insertion_sort(short *array, int length);
 
 #endif //TI_PROJEKT_INSERTION_SORT_H
