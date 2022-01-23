@@ -4,33 +4,29 @@
 
 #include "bubble_sort.h"
 
-void bubble_sort(short *array, int numbers) {
-    int i;
-    int j;
-    int backup;
-
-    short *new = copy_array(array);
+int bubble_sort(short *array) {
+    printf("\n\nMichael Buble Sort:\n");
+    short *cpyArr = copy_array(array);
 
 
-    for (i = 0; i < numbers - 1; ++i) {
-        for (j = 0; j < numbers - i - 1; ++j) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
             // compare two nearby elements
-            if (array[j] > array[j + 1]) {
+            if (cpyArr[j] > cpyArr[j + 1]) {
                 // swap the elements if not in correct order
-                backup = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = backup;
+                int backup = cpyArr[j];
+                cpyArr[j] = cpyArr[j + 1];
+                cpyArr[j + 1] = backup;
             }
         }
     }
 
-
-
-    printf("\n\nBubble Sort:\nSorted\n");
-    for (i = 0; i < numbers; i++)
-    {
-        printf("%d ", array[i]);
+    printf("\nSorted: \n[");
+    for (int k = 0; k < 8; k++)    {
+        printf(" %d", cpyArr[k]);
     }
 
-    printf("\n");
+    printf(" ]\n");
+
+    return 0;
 }
