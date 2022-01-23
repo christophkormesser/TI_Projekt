@@ -5,6 +5,9 @@
 #ifndef TI_PROJEKT_CREATE_ARRAY_H
 #define TI_PROJEKT_CREATE_ARRAY_H
 
+#include <stdlib.h>     // rand()
+#include <stdio.h>      // printf()
+
 short *create_array(unsigned int size);
 
 #endif //TI_PROJEKT_CREATE_ARRAY_H

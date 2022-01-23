@@ -4,9 +4,6 @@
 
 #include "create_array.h"
 
-#include <stdlib.h>     // rand()
-#include <stdio.h>      // printf()
-
 #define MAX_INT 65536 // we subtract 32768 later, so we can create random negative numbers too
 
 // short int:       -32.767 - 32.767
