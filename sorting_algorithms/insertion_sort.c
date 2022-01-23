@@ -6,6 +6,10 @@
 
 
 int insertion_sort(short *array, int length){
+    // measure runtime
+    clock_t start_t, end_t;
+    start_t = clock();
+
     printf("\n\n");
     short *new = copy_array(array);
 
@@ -27,7 +31,11 @@ int insertion_sort(short *array, int length){
         new[j + 1] = key;
     }
 
+    end_t = clock();
+
     printf("\nInsertion Sort:\n");
+    printf("Runtime: %lf seconds\n", (double)(end_t - start_t)/CLOCKS_PER_SEC);
+
     for(int q = 0; q < (int)sizeof(new); q++){
         printf("%hi\t", new[q]);
     }

@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
+#include <time.h>
 
 #include "../shared/copy_array.h"
 
