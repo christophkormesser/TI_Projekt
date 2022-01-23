@@ -18,10 +18,13 @@ int main(void) {
 	printf("sorting algos\n");
     srand(time(NULL));
 
-    short *short_array = create_array(8);
-    short *medium_array = create_array(16);
-    short *large_array = create_array(64);
-    short *bub2k_array = create_array(2000);
+    int min = -32.767;
+    int max = 32.767;
+
+    short *short_array = create_array(8, min, max);
+    short *medium_array = create_array(16, min, max);
+    short *large_array = create_array(64, min, max);
+    short *bub2k_array = create_array(2000, min, max);
 
     //insertion_sort(short_array);
     double ins_runtime = insertion_sort(short_array, 8);
