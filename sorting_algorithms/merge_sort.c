@@ -1,5 +1,5 @@
 #include "merge_sort.h"
-#include "copy_array.h"
+#include "../shared/copy_array.h"
 
 void ms_print_array(short *a) {
 	printf("Print List\n");

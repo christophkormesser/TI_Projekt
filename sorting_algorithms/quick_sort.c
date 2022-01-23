@@ -6,7 +6,7 @@
  */
 
 #include "quick_sort.h"
-#include "copy_array.h"
+#include "../shared/copy_array.h"
 
 void qs_print_array(short *a) {
 	printf("Print List\n");
