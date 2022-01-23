@@ -16,7 +16,6 @@ int main(void) {
 	printf("sorting algos\n");
     srand(time(NULL));
 
-	merge_sort();
     short *short_array = create_array(8);
     short *medium_array = create_array(16);
     short *large_array = create_array(64);
@@ -24,6 +23,8 @@ int main(void) {
     insertion_sort(short_array);
 
     bubble_sort(short_array);
+
+	merge_sort(short_array);
 
     free(short_array);
     free(medium_array);
