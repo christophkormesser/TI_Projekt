@@ -5,9 +5,10 @@
 #include "insertion_sort.h"
 
 
-int insertion_sort(short *array, int length){
+double insertion_sort(short *array, int length){
     // measure runtime
     clock_t start_t, end_t;
+    double total_t;
     start_t = clock();
 
     printf("\n\n");
@@ -34,11 +35,12 @@ int insertion_sort(short *array, int length){
     end_t = clock();
 
     printf("\nInsertion Sort:\n");
-    printf("Runtime: %lf seconds\n", (double)(end_t - start_t)/CLOCKS_PER_SEC);
+    total_t = (double)(end_t - start_t)/CLOCKS_PER_SEC;
+    printf("Runtime: %lf seconds\n", total_t);
 
     for(int q = 0; q < (int)sizeof(new); q++){
         printf("%hi\t", new[q]);
     }
 
-    return 0;
+    return total_t;
 }
