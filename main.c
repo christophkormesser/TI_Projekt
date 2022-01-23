@@ -18,8 +18,8 @@ int main(void) {
 	printf("sorting algos\n");
     srand(time(NULL));
 
-    int min = -32.767;
-    int max = 32.767;
+    int min = -32767;
+    int max = 32767;
 
     short *short_array = create_array(8, min, max);
     short *medium_array = create_array(16, min, max);
@@ -31,6 +31,8 @@ int main(void) {
 
     printf("\n\n1. Bubble Sort - [8]\n");
     bubble_sort(large_array);
+
+    merge_sort(short_array, 8);
 /*
     printf("2. Bubble Sort - [16]\n");
     bubble_sort(medium_array, 16);
