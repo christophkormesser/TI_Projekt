@@ -58,7 +58,7 @@ int quick_sort(short *array, int l) {
 
 	printf("\nQuick Sort - %d\n", l);
 
-    short *sorted = malloc(sizeof(array));
+    short *sorted = (short *)malloc(sizeof(short) * l);
     sorted = copy_array(array, l);
 
 	quicksort(sorted, 0, l-1);
@@ -67,6 +67,7 @@ int quick_sort(short *array, int l) {
     for(int q = 0; q < l; q++){
         printf("%hi\t", sorted[q]);
     }
+    printf("\n");
 
 	return 0;
 }
