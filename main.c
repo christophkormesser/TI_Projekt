@@ -21,12 +21,12 @@ int main(void) {
     short min = -32767;
     short max = 32767;
 
-    short *short_array = create_array(16, min, max, DSC);
-    //short *medium_array = create_array(16, min, max, RANDOM);
-    //short *large_array = create_array(64, min, max, RANDOM);
-    //short *bub2k_array = create_array(2000, min, max, RANDOM);
+    short *short_array = create_array(8, min, max, RANDOM);
+    short *medium_array = create_array(16, min, max, RANDOM);
+    short *large_array = create_array(64, min, max, RANDOM);
+    short *bub2k_array = create_array(2000, min, max, RANDOM);
 
-    //double ins_runtime_small = insertion_sort(short_array, 8);
+    double ins_runtime_small = insertion_sort(short_array, 8);
     //double ins_runtime_medium = insertion_sort(medium_array, 16);
     //double ins_runtime_large = insertion_sort(large_array, 64);
 
@@ -46,12 +46,12 @@ int main(void) {
 	//quick_sort(short_array, 8);
 
     free(short_array);
-    //free(medium_array);
-    //free(large_array);
-    //free(bub2k_array);
+    free(medium_array);
+    free(large_array);
+    free(bub2k_array);
 
-    printf("\nRUNTIMES\n------\n");
-    //printf("Insertion Sort: %lf secs\n", ins_runtime_small);
+    printf("\n\nRUNTIMES\n------\n");
+    printf("Insertion Sort: %lf secs\n", ins_runtime_small);
     //printf("Insertion Sort: %lf secs\n", ins_runtime_medium);
     //printf("Insertion Sort: %lf secs\n", ins_runtime_large);
     printf("Bubble Sort: \n");
