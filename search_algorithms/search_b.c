@@ -18,7 +18,7 @@ struct Element *create_element(){
     return new_element;
 }
 
-
+/*
 void fill_dictionary_with_random_values(struct Element *dictionary, int size){
     char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
     for (int i = 0; i < size; ++i){
@@ -29,7 +29,7 @@ void fill_dictionary_with_random_values(struct Element *dictionary, int size){
             }
         }
     }
-}
+} */
 
 
 struct Element create_array_search(){
@@ -38,7 +38,7 @@ struct Element create_array_search(){
         fprintf(stderr, "create_array (search): Out of Memory!");
         exit(1);
     }
-    fill_dictionary_with_random_values(new_array, 400);
+    // fill_dictionary_with_random_values(new_array, 400);
     // create array with 400 elements
  /*   for(int i = 0; i < 400; i++){
         new_array[i] = *create_element();
