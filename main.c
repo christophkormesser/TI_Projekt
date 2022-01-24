@@ -15,7 +15,6 @@
 #include "shared/create_array.h"
 #include "shared/list_funcs.h"
 #include "shared/runtime.h"
-#include "search_algorithms/search_b.h"
 #include "shared/compare_list.h"
 #include "shared/key_value_list.h"
 #include "shared/runtime_list.h"
