@@ -8,16 +8,16 @@
 #include <stdlib.h>     // rand()
 #include <stdio.h>      // printf()
 
-enum Direction {
+enum direction {
 	RANDOM = 0,
 	ASC = 1,
 	DSC = 2
-} direction;
+};
 
-short *create_array(unsigned int size, short min, short max, enum Direction direction);
 
 #endif //TI_PROJEKT_CREATE_ARRAY_H
 
+short *create_array(unsigned int size, short min, short max, enum direction);
 
 
 #ifndef RANDOM_NUMBER_H

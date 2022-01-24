@@ -6,12 +6,12 @@
 
 short *copy_array(short *array, int length){
 
-    short *cpy_array = malloc(sizeof(*array) * length);
+    short *cpy_array = (short *)malloc(sizeof(short) * length);
     if(cpy_array == NULL){
         fprintf(stderr, "copy array: Out of Memory!");
         exit(1);
     }
-    printf("SIZEOF ARRAY: %lu", sizeof(*array));
+    printf("SIZEOF ARRAY: %d", length);
     printf("\ncopied array:\n[  ");
     int i = 0;
     //int n = sizeof(array);

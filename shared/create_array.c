@@ -9,8 +9,8 @@
 
 // short int:       -32.767 - 32.767
 // unsigned int:    0 - 65.535
-short *create_array(unsigned int size, short min, short max, enum Direction dir){
-    short *array = malloc(sizeof(short) * size);
+short *create_array(unsigned int size, short min, short max, enum direction dir){
+    short *array = (short *)malloc(sizeof(short) * size);
     if(array == NULL){
         fprintf(stderr, "create array: Out of Memory!");
         exit(1);
@@ -71,7 +71,7 @@ short *create_array(unsigned int size, short min, short max, enum Direction dir)
     	}
     	printf("\n");
     } */
-    printf("]");
+    printf("]\n");
 
     return array;
 }
