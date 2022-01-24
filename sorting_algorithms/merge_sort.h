@@ -6,7 +6,7 @@
 
 #include "../shared/copy_array.h"
 
-int merge_sort(short *array, int l);
+double merge_sort(short *array, int l);
 
 #endif
 

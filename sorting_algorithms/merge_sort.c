@@ -55,7 +55,7 @@ void merge_and_sort(int i, int j, short *a, short *b) {
     local_copy_array(a, b, i, j);
 }
 
-int merge_sort(short *array, int l) {
+double merge_sort(short *array, int l) {
 	/*
 	int input = 16, a[64], b[64];
 
@@ -89,5 +89,5 @@ int merge_sort(short *array, int l) {
         printf(" %hi ", sorted[q]);
     }
 
-	return 0;
+	return total_t;
 }

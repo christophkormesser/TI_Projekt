@@ -6,7 +6,7 @@
 
 #include "../shared/copy_array.h"
 
-int quick_sort(short *array, int length);
+double quick_sort(short *array, int length);
 
 #endif
 

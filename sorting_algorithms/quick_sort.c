@@ -53,7 +53,7 @@ void quicksort(short *array, int first, int last) {
 	}
 }
 
-int quick_sort(short *array, int l) {
+double quick_sort(short *array, int l) {
 
 	printf("\nQuick Sort - %d\n", l);
 

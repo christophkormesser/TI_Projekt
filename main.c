@@ -21,28 +21,28 @@ int main(void) {
     short min = -32767;
     short max = 32767;
 
-    short *short_array = create_array(8, min, max, RANDOM);
+    short *small_array = create_array(8, min, max, RANDOM);
     short *medium_array = create_array(16, min, max, RANDOM);
     short *large_array = create_array(64, min, max, RANDOM);
 
-    double ins_runtime_small = insertion_sort(short_array, 8);
+    double ins_runtime_small = insertion_sort(small_array, 8);
     double ins_runtime_medium = insertion_sort(medium_array, 16);
     double ins_runtime_large = insertion_sort(large_array, 64);
 
     // BUBBLE SORT:
-    double bub_runtime_small = bubble_sort(short_array, 8);
+    double bub_runtime_small = bubble_sort(small_array, 8);
     double bub_runtime_medium = bubble_sort(medium_array, 16);
     double bub_runtime_large = bubble_sort(large_array, 64);
     //printf("\n\n1. Bubble Sort - [8]\n");
     //bubble_sort(large_array);
 
     // QUICK SORT:
-    double qs_runtime_small = quick_sort(short_array, 8);
+    double qs_runtime_small = quick_sort(small_array, 8);
     double qs_runtime_medium = quick_sort(medium_array, 16);
     double qs_runtime_large = quick_sort(large_array, 64);
 
     // MERGE SORT:
-    double ms_runtime_small = merge_sort(short_array, 8);
+    double ms_runtime_small = merge_sort(small_array, 8);
     double ms_runtime_medium = merge_sort(medium_array, 16);
     double ms_runtime_large = merge_sort(large_array, 64);
 
@@ -56,7 +56,7 @@ int main(void) {
 */
    //bubble_sort_2k(bub2k_array, 2000);
 
-    free(short_array);
+    free(small_array);
     free(medium_array);
     free(large_array);
     //free(bub2k_array);
