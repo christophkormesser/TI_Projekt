@@ -21,6 +21,7 @@ int main(void) {
     short min = -32767;
     short max = 32767;
 
+    /*
     short *small_array = create_array(8, min, max, RANDOM);
     short *medium_array = create_array(16, min, max, RANDOM);
     short *large_array = create_array(64, min, max, RANDOM);
@@ -44,9 +45,11 @@ int main(void) {
     // MERGE SORT:
     double ms_runtime_small = merge_sort(small_array, 8);
     double ms_runtime_medium = merge_sort(medium_array, 16);
-    double ms_runtime_large = merge_sort(large_array, 64);
+    double ms_runtime_large = merge_sort(large_array, 64); */
 
-    //short *bub2k_array = create_array(2000, min, max, RANDOM);
+    short *bub2k_ran_array = create_array(2000, min, max, RANDOM);
+    short *bub2k_asc_array = create_array(2000, min, max, RANDOM);
+    short *bub2k_dsc_array = create_array(2000, min, max, RANDOM);
 
 /*
     printf("2. Bubble Sort - [16]\n");
@@ -54,14 +57,19 @@ int main(void) {
     printf("3. Bubble Sort - [64]\n");
     bubble_sort(large_array, 64);
 */
-   //bubble_sort_2k(bub2k_array, 2000);
+    bubble_sort_2k(bub2k_ran_array, 2000);
+    bubble_sort_2k(bub2k_asc_array, 2000);
+    bubble_sort_2k(bub2k_dsc_array, 2000);
 
+    /*
     free(small_array);
     free(medium_array);
-    free(large_array);
-    //free(bub2k_array);
+    free(large_array); */
+    free(bub2k_ran_array);
+    free(bub2k_asc_array);
+    free(bub2k_dsc_array);
 
-    printf("\n\nRUNTIMES\n------\n");
+    printf("\n\nRUNTIMES\n------\n"); /*
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
     printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
     printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
@@ -76,7 +84,7 @@ int main(void) {
 
     printf("Merge Sort small: %lf secs\n", ms_runtime_small);
     printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
-    printf("Merge Sort large: %lf secs\n", ms_runtime_large);
+    printf("Merge Sort large: %lf secs\n", ms_runtime_large); */
 
     printf("search algos\n");
 	return 0;
