@@ -4,6 +4,6 @@
 #include <stdlib.h>     // rand()
 #include <stdio.h>      // printf()
 
-int random_number(int min, int max);
+short random_number(short min, short max);
 
 #endif //TI_PROJEKT_CREATE_ARRAY_H

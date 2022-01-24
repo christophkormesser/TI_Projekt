@@ -14,7 +14,7 @@ enum Direction {
 	DSC = 2
 } direction;
 
-short *create_array(unsigned int size, int min, int max, enum Direction direction);
+short *create_array(unsigned int size, short min, short max, enum Direction direction);
 
 #endif //TI_PROJEKT_CREATE_ARRAY_H
 

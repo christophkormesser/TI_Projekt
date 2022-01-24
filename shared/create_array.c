@@ -9,37 +9,46 @@
 
 // short int:       -32.767 - 32.767
 // unsigned int:    0 - 65.535
-short *create_array(unsigned int size, int min, int max, enum Direction direction){
+short *create_array(unsigned int size, short min, short max, enum Direction dir){
     short *array = malloc(sizeof(short) * size);
-    int tmp;
-    printf("\nUnsorted array: %d\n[  ", size);
+    int range;
+    printf("\nUnsorted array: %d\n– ", size);
 
-	switch (direction) {
+	switch (dir) {
 		case RANDOM:
-			printf("Direction: RANDOM\n");
+			printf("Direction: RANDOM\n[ ");
 			for(unsigned int i = 0; i < size; i++) {
 				array[i] = random_number(min, max);
 				printf("%hi  ", array[i]);
 			}
 			break;
 		case ASC:
-			printf("Direction: ASC\n");
-			tmp = min;
-			for(unsigned int i = 0; i < size; i++){
-				array[i] = random_number(tmp, max);
-				tmp = array[i];
-				printf("%hi  ", array[i]);
-			}
+			printf("Direction: ASC\n[ ");
+            // create step ranges
+            range = (max / size) * 2; // problematic if size is greater than 32.767
+            max = min + range;
+            for(unsigned int i = 0; i < size; i++){
+                array[i] = random_number(min, max);
+                printf("%hi  ", array[i]);
+                min = max;      // new maximum
+                max += range;   // new minimum
+            }
 			break;
 		case DSC:
-			printf("Direction: DSC\n");
-			tmp = max;
+			printf("Direction: DSC\n[ ");
+            // create step ranges
+            range = (max / size) * 2; // problematic if size is greater than 32.767
+            min = max - range;
 			for(unsigned int i = 0; i < size; i++){
-				array[i] = random_number(min, tmp);
-				tmp = array[i];
+				array[i] = random_number(min, max);
 				printf("%hi  ", array[i]);
+                max = min;      // new maximum
+                min -= range;   // new minimum
 			}
 			break;
+        default:
+            printf("\nERROR: there is something wrong with the switch case in create_array.c !\n");
+            break;
 	}
 
     // Aufsteigend
