@@ -8,7 +8,7 @@ void bubble_sort_2k(short *array, int length) {
     printf("\n\n - [1].[3] - MICHAEL BUBLE SORT 2k:");
     clock_t start_t, end_t;
     double total_t;
-    short *cpyArr = copy_array(array);
+    short *cpyArr = copy_array(array, length);
 
     for (int i = 0; i < length ; ++i) {
         printf("%d ", cpyArr[i]);

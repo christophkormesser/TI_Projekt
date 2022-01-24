@@ -59,7 +59,7 @@ int quick_sort(short *array, int l) {
 	printf("\nQuick Sort - %d\n", l);
 
     short *sorted = malloc(sizeof(array));
-    sorted = copy_array(array);
+    sorted = copy_array(array, l);
 
 	quicksort(sorted, 0, l-1);
 

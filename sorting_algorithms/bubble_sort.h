@@ -11,6 +11,6 @@
 #include "../shared/copy_array.h"
 #include <time.h>
 
-void bubble_sort(short *array);
+void bubble_sort(short *array, int length);
 
 #endif //TI_PROJEKT_BUBBLE_SORT_H

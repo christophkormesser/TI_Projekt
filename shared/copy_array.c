@@ -4,9 +4,10 @@
 
 #include "copy_array.h"
 
-short *copy_array(short *array){
+short *copy_array(short *array, int length){
 
-    short *cpy_array = malloc(sizeof(*array));
+    short *cpy_array = malloc(sizeof(*array) * length);
+    printf("SIZEOF ARRAY: %lu", sizeof(*array));
     printf("\ncopied array:\n[  ");
     int i = 0;
     //int n = sizeof(array);

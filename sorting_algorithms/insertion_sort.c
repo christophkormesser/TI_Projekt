@@ -13,7 +13,7 @@ double insertion_sort(short *array, int length){
     start_t = clock();
 
     printf("\n\n");
-    short *new = copy_array(array);
+    short *new = copy_array(array, length);
 
 
 
