@@ -33,10 +33,9 @@ gcc -O0 -g3 -pedantic -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"shared/ru
 
 gcc -O0 -g3 -pedantic -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"shared/runtime_list.d" -MT"shared/runtime_list.o" -o "shared/runtime_list.o" "shared/runtime_list.c"
 
-gcc -O0 -g3 -pedantic -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"search_algorithms/search_b.d" -MT"search_algorithms/search_b.o" -o "search_algorithms/search_b.o" "search_algorithms/search_b.c"
-
 gcc -O0 -g3 -pedantic -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "main.c"
 
-gcc  -o "TI_Projekt"  ./sorting_algorithms/bubble_sort.o ./sorting_algorithms/bubble_sort_2k.o ./sorting_algorithms/insertion_ll.o ./sorting_algorithms/insertion_sort.o ./sorting_algorithms/merge_sort.o ./sorting_algorithms/quick_sort.o  ./shared/compare_list.o ./shared/copy_array.o ./shared/create_array.o ./shared/key_value_list.o ./shared/list_funcs.o ./shared/random_number.o ./shared/runtime.o ./shared/runtime_list.o  ./search_algorithms/search_b.o  ./main.o
+gcc  -o "TI_Projekt"  ./sorting_algorithms/bubble_sort.o ./sorting_algorithms/bubble_sort_2k.o ./sorting_algorithms/insertion_ll.o ./sorting_algorithms/insertion_sort.o ./sorting_algorithms/merge_sort.o ./sorting_algorithms/quick_sort.o  ./shared/compare_list.o ./shared/copy_array.o ./shared/create_array.o ./shared/key_value_list.o ./shared/list_funcs.o ./shared/random_number.o ./shared/runtime.o ./shared/runtime_list.o  ./main.o
 
 rm *.o
+rm *.d
