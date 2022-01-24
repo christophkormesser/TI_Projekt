@@ -43,3 +43,15 @@ double insertion_sort(short *array, int length){
     free(new);
     return total_t;
 }
+
+void insertionsort_linkedlist(Node **head){
+    // init sorted linked list
+    Node *sorted = NULL;
+    Node *current = *head;
+    // go through unsorted list and insert every node into sorted list
+    while (current != NULL){
+        sorted_insert(&sorted, current->value);
+        current = current->next;
+    }
+    *head = sorted;
+}
