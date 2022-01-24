@@ -4,8 +4,8 @@
 
 #include "bubble_sort.h"
 
-void bubble_sort(short *array, int length) {
-    printf("[1].[1].[c] - MICHAEL BUBLE SORT:\n");
+double bubble_sort(short *array, int length) {
+    printf("MICHAEL BUBBLE SORT:\n");
     clock_t start_t, end_t;
     double total_t;
     short *cpyArr = copy_array(array, length);
@@ -33,7 +33,7 @@ void bubble_sort(short *array, int length) {
     end_t = clock();
 
     total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-    printf("\n\nRuntime: %lf", total_t);
+    //printf("\n\nRuntime: %lf", total_t);
 
     printf("\nPrint sorted list: \n[");
     for (int i = 0; i < 64; i++)    {
@@ -41,4 +41,6 @@ void bubble_sort(short *array, int length) {
     }
 
     printf(" ]\n");
+    return total_t;
 }
+
