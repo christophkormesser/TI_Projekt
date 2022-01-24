@@ -12,7 +12,10 @@
 #include <time.h>
 
 #include "../shared/copy_array.h"
+#include "../shared/list_funcs.h"
 
 double insertion_sort(short *array, int length);
+
+void insertionsort_linkedlist(Node **head);
 
 #endif //TI_PROJEKT_INSERTION_SORT_H
