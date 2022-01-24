@@ -15,16 +15,16 @@ typedef struct Node{
 
 Node *create(short value);
 
-void push(Node **head, short value);
+void add(Node **head, short value);
 
 void free_list(Node *head);
 
-void print_linkedlist(Node *head);
+void print_list(Node *head);
 
 void sorted_insert(Node **head, short value);
 
-void is_linkedlist_sorted(Node *head);
+void is_list_sorted(Node *head);
 
-void fill_linkedlist_with_random_values(Node **head, int size);
+void fill_linkedlist(Node **head, int size);
 
 #endif

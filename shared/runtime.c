@@ -20,7 +20,7 @@ void check_runtime(int size) {
     time_array[0] = end_time - start_time;
     // init time list
     start_time = clock();
-    fill_linkedlist_with_random_values(&head, size);
+    fill_linkedlist(&head, size);
     end_time = clock();
     time_array[1] = end_time - start_time;
 
@@ -30,7 +30,7 @@ void check_runtime(int size) {
 
     // copy array values to list
     for (int i = size; i > 0; i--){
-        push(&head, array[i - 1]);
+        add(&head, array[i - 1]);
     }
 
     // show that array and list key have the same values

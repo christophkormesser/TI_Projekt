@@ -8,7 +8,7 @@ Node *create(short value){
     return new_element;
 }
 
-void push(Node **head, short value){
+void add(Node **head, short value){
     // create Node
     Node *new = create(value);
     // set next element = previous first element
@@ -27,7 +27,7 @@ void free_list(Node *head){
     }
 }
 
-void print_linkedlist(Node *head){
+void print_list(Node *head){
     Node *tmp = head;
     int length = 0;
     int i = 0;
@@ -67,7 +67,7 @@ void sorted_insert(Node **head, short value){
     current->next = node;
 }
 
-void is_linkedlist_sorted(Node *head){
+void is_list_sorted(Node *head){
     while (head->next != NULL){
         if (head->value > head->next->value){
             // print red not sorted
@@ -80,7 +80,7 @@ void is_linkedlist_sorted(Node *head){
     printf("    \033[1;32msorted\033[0m -> ");
 }
 
-void fill_linkedlist_with_random_values(Node **head, int size){
+void fill_linkedlist(Node **head, int size){
     for (int i = 0; i < size; i++)
-        push(head, (rand() % (32768 * 2)) - 32768);
+        add(head, (rand() % (32768 * 2)) - 32768);
 }
