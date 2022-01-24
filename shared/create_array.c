@@ -11,6 +11,10 @@
 // unsigned int:    0 - 65.535
 short *create_array(unsigned int size, short min, short max, enum Direction dir){
     short *array = malloc(sizeof(short) * size);
+    if(array == NULL){
+        fprintf(stderr, "create array: Out of Memory!");
+        exit(1);
+    }
     int range;
     printf("\nUnsorted array: %d\n– ", size);
 

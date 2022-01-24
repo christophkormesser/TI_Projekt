@@ -10,13 +10,13 @@ double insertion_sort(short *array, int length){
     // measure runtime
     clock_t start_t, end_t;
     double total_t;
-    start_t = clock();
+
 
     printf("\n\n");
     short *new = copy_array(array, length);
 
 
-
+    start_t = clock();
     int i, j;
     short key;
 
