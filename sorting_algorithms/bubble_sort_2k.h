@@ -11,7 +11,7 @@
 #include "../shared/copy_array.h"
 #include <time.h>
 
-void bubble_sort_2k(short *array, int length);
+double bubble_sort_2k(short *array, int length);
 
 
 #endif //TI_PROJEKT_BUBBLE_SORT_2K_H

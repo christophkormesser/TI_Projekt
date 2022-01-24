@@ -4,7 +4,7 @@
 
 #include "bubble_sort_2k.h"
 
-void bubble_sort_2k(short *array, int length) {
+double bubble_sort_2k(short *array, int length) {
     printf("\n\n - [1].[3] - MICHAEL BUBLE SORT 2k:");
     clock_t start_t, end_t;
     double total_t;
@@ -40,5 +40,7 @@ void bubble_sort_2k(short *array, int length) {
     }
 
     printf(" ]\n");
+
+    return total_t;
 }
 
