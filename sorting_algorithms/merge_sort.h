@@ -2,6 +2,9 @@
 #define MERGE_SORT_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+#include "../shared/copy_array.h"
 
 int merge_sort(short *array, int l);
 
