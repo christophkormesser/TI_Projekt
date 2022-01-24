@@ -24,7 +24,6 @@ int main(void) {
     short *short_array = create_array(8, min, max, RANDOM);
     short *medium_array = create_array(16, min, max, RANDOM);
     short *large_array = create_array(64, min, max, RANDOM);
-    //short *bub2k_array = create_array(2000, min, max, RANDOM);
 
     double ins_runtime_small = insertion_sort(short_array, 8);
     double ins_runtime_medium = insertion_sort(medium_array, 16);
@@ -37,7 +36,18 @@ int main(void) {
     //printf("\n\n1. Bubble Sort - [8]\n");
     //bubble_sort(large_array);
 
-    //merge_sort(short_array, 64);
+    // QUICK SORT:
+    double qs_runtime_small = quick_sort(short_array, 8);
+    double qs_runtime_medium = quick_sort(medium_array, 16);
+    double qs_runtime_large = quick_sort(large_array, 64);
+
+    // MERGE SORT:
+    double ms_runtime_small = merge_sort(short_array, 8);
+    double ms_runtime_medium = merge_sort(medium_array, 16);
+    double ms_runtime_large = merge_sort(large_array, 64);
+
+    //short *bub2k_array = create_array(2000, min, max, RANDOM);
+
 /*
     printf("2. Bubble Sort - [16]\n");
     bubble_sort(medium_array, 16);
@@ -45,9 +55,6 @@ int main(void) {
     bubble_sort(large_array, 64);
 */
    //bubble_sort_2k(bub2k_array, 2000);
-
-
-	//quick_sort(short_array, 8);
 
     free(short_array);
     free(medium_array);
@@ -58,11 +65,18 @@ int main(void) {
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
     printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
     printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
+
     printf("Bubble Sort small: %lf secs\n", bub_runtime_small);
     printf("Bubble Sort medium: %lf secs\n", bub_runtime_medium);
     printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
-    printf("Merge Sort: \n");
-    printf("Quick Sort: \n");
+
+    printf("Quick Sort small: %lf secs\n", qs_runtime_small);
+    printf("Quick Sort medium: %lf secs\n", qs_runtime_medium);
+    printf("Quick Sort large: %lf secs\n", qs_runtime_large);
+
+    printf("Merge Sort small: %lf secs\n", ms_runtime_small);
+    printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
+    printf("Merge Sort large: %lf secs\n", ms_runtime_large);
 
     printf("search algos\n");
 	return 0;

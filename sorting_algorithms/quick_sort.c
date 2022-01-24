@@ -6,7 +6,6 @@
  */
 
 #include "quick_sort.h"
-#include "../shared/copy_array.h"
 
 void qs_print_array(short *a) {
 	printf("Print List\n");
@@ -58,16 +57,23 @@ int quick_sort(short *array, int l) {
 
 	printf("\nQuick Sort - %d\n", l);
 
+    clock_t start_t, end_t;
+    double total_t;
+
     short *sorted = (short *)malloc(sizeof(short) * l);
     sorted = copy_array(array, l);
 
+    start_t = clock();
 	quicksort(sorted, 0, l-1);
+    end_t = clock();
 
-    printf("\nSorted:::\n");
+    total_t = (double)(end_t - start_t)/CLOCKS_PER_SEC;
+    printf("\nRuntime: %lf seconds\n", total_t);
     for(int q = 0; q < l; q++){
         printf("%hi\t", sorted[q]);
     }
     printf("\n");
 
-	return 0;
+    free(sorted);
+    return total_t;
 }

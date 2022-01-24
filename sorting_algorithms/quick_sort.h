@@ -2,6 +2,9 @@
 #define QUICK_SORT_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+#include "../shared/copy_array.h"
 
 int quick_sort(short *array, int length);
 
