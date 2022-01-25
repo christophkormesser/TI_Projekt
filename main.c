@@ -34,6 +34,10 @@ int main(void) {
     short *medium_array = create_array(16, -32767, 32767, RANDOM);
     short *large_array = create_array(64, -32767, 32767, RANDOM);
 
+    short *array_2k_ran = create_array(2048, -32767, 32767, RANDOM);
+    short *array_2k_asc = create_array(2048, -32767, 32767, ASC);
+    short *array_2k_dsc = create_array(2048, -32767, 32767, DSC);
+
     double ins_runtime_small = insertion_sort(small_array, 8);
     double ins_runtime_medium = insertion_sort(medium_array, 16);
     double ins_runtime_large = insertion_sort(large_array, 64);
@@ -50,32 +54,40 @@ int main(void) {
     double ms_runtime_medium = merge_sort(medium_array, 16);
     double ms_runtime_large = merge_sort(large_array, 64);
 
+    double bs2k_runtime_ran = bubble_sort_2k(array_2k_ran, array_2k);
+    double bs2k_runtime_asc = bubble_sort_2k(array_2k_asc, array_2k);
+    double bs2k_runtime_dsc = bubble_sort_2k(array_2k_dsc, array_2k);
+
     // free memory
     free(small_array);
     free(medium_array);
     free(large_array);
 
+    free(array_2k_ran);
+    free(array_2k_asc);
+    free(array_2k_dsc);
+
     printf("\n\nRUNTIMES\n------\n");
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
     printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
-    //printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
+    printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
 
     printf("Bubble Sort small: %lf secs\n", bub_runtime_small);
     printf("Bubble Sort medium: %lf secs\n", bub_runtime_medium);
-    //printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
+    printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
 
     printf("Quick Sort small: %lf secs\n", qs_runtime_small);
     printf("Quick Sort medium: %lf secs\n", qs_runtime_medium);
-    //printf("Quick Sort large: %lf secs\n", qs_runtime_large);
+    printf("Quick Sort large: %lf secs\n", qs_runtime_large);
 
     printf("Merge Sort small: %lf secs\n", ms_runtime_small);
     printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
-    //printf("Merge Sort large: %lf secs\n", ms_runtime_large);
-/*
-    printf("Merge Sort small: %lf secs\n", bs2k_runtime_ran);
-    printf("Merge Sort medium: %lf secs\n", bs2k_runtime_asc);
-    printf("Merge Sort large: %lf secs\n", bs2k_runtime_dsc);
-*/
+    printf("Merge Sort large: %lf secs\n", ms_runtime_large);
+
+    printf("Bubble Sort 2k Random: %lf secs\n", bs2k_runtime_ran);
+    printf("Bubble Sort 2k Ascending: %lf secs\n", bs2k_runtime_asc);
+    printf("Bubble Sort 2k Descending: %lf secs\n", bs2k_runtime_dsc);
+
     printf("search algos\n");
 
     k_v_list dict[400];
