@@ -14,10 +14,12 @@ void check_runtime(int size) {
 
     // init time array
     start_time = clock();
+
     // create array
     array = create_array(size, min, max, RANDOM);
     end_time = clock();
     time_array[0] = end_time - start_time;
+
     // init time list
     start_time = clock();
     fill_linkedlist(&head, size);
