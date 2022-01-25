@@ -14,7 +14,7 @@ void check_runtime(int size) {
 
     // init time array
     start_time = clock();
-    // fill_array_with_random_values(array, size);
+    // create array
     array = create_array(size, min, max, RANDOM);
     end_time = clock();
     time_array[0] = end_time - start_time;
@@ -47,10 +47,13 @@ void check_runtime(int size) {
     end_time = clock();
     time_array[3] = end_time - start_time;
 
-    // table
+    // prints table
+    printf("\n\nTABLE\n");
     printf("%18carray%9clist\n", ' ', ' ');
+    // initialization time array/list
     printf("%5cinit%4c%.8f%3c%.8f\n", ' ', ' ', (double) time_array[0] / CLOCKS_PER_SEC, ' ',
            (double) time_array[1] / CLOCKS_PER_SEC);
+    // sorting time array/list
     printf("%5csort%4c%.8f%3c%.8f\n", ' ', ' ', (double) time_array[2] / CLOCKS_PER_SEC, ' ',
            (double) time_array[3] / CLOCKS_PER_SEC);
 

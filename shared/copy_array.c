@@ -18,7 +18,9 @@ short *copy_array(short *array, int length){
 
     while(array[i] != '\0'){
         cpy_array[i] = array[i];
-        printf("%hi ", cpy_array[i]);
+        if(i < 20){
+            printf("%hi ", cpy_array[i]);
+        }
         i++;
     }
     printf("]");

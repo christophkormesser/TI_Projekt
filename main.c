@@ -20,6 +20,7 @@
 #include "shared/runtime_list.h"
 
 int main(void) {
+    printf("\n!==DISCLAIMER==!\nEvery printed array is displayed with a maximum of 20 elements.\n\n");
 	printf("sorting algos\n");
     srand(time(NULL));
 
@@ -29,7 +30,32 @@ int main(void) {
 
     check_runtime(array_2k);
 
-    printf("\n\nRUNTIMES\n------\n"); /*
+    short *small_array = create_array(8, -32767, 32767, RANDOM);
+    short *medium_array = create_array(16, -32767, 32767, RANDOM);
+    short *large_array = create_array(64, -32767, 32767, RANDOM);
+
+    double ins_runtime_small = insertion_sort(small_array, 8);
+    double ins_runtime_medium = insertion_sort(medium_array, 16);
+    double ins_runtime_large = insertion_sort(large_array, 64);
+
+    double bub_runtime_small = bubble_sort(small_array, 8);
+    double bub_runtime_medium = bubble_sort(medium_array, 16);
+    double bub_runtime_large = bubble_sort(large_array, 64);
+
+    double qs_runtime_small = quick_sort(small_array, 8);
+    double qs_runtime_medium = quick_sort(medium_array, 16);
+    double qs_runtime_large = quick_sort(large_array, 64);
+
+    double ms_runtime_small = merge_sort(small_array, 8);
+    double ms_runtime_medium = merge_sort(medium_array, 16);
+    double ms_runtime_large = merge_sort(large_array, 64);
+
+    // free memory
+    free(small_array);
+    free(medium_array);
+    free(large_array);
+
+    printf("\n\nRUNTIMES\n------\n");
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
     printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
     printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
@@ -45,34 +71,38 @@ int main(void) {
     printf("Merge Sort small: %lf secs\n", ms_runtime_small);
     printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
     printf("Merge Sort large: %lf secs\n", ms_runtime_large);
-
+/*
     printf("Merge Sort small: %lf secs\n", bs2k_runtime_ran);
     printf("Merge Sort medium: %lf secs\n", bs2k_runtime_asc);
-    printf("Merge Sort large: %lf secs\n", bs2k_runtime_dsc); */
-
+    printf("Merge Sort large: %lf secs\n", bs2k_runtime_dsc);
+*/
     printf("search algos\n");
 
     k_v_list dict[400];
     fill_list(dict, 400);
 
-
-    printf("%d %s\n", dict[163].key, dict[163].value);
+    // check an element
+    printf("\nChecking 123rd element from list:\nkey: %d\nvalue: %s\n\n", dict[123].key, dict[123].value);
     char input;
+
+    // ask user if they want to search for something in the dict
+    printf("Please choose from the following options:\n---------");
     do{
-	   printf("Search for specific (k)ey or (t)ext or (e)xit?\n");
+       printf("\n(k) search with key\n(v) search with value\n(q) quit\n: ");
 	   input = (char) getchar();
 	   while ((getchar()) != '\n'); // clear input buffer
 	   if (input == 'k'){
 		   printf("Enter Key:\n");
 		   int key = 0;
 		   scanf("%d", &key);
-		   while ((getchar()) != '\n'); // clear input buffer
+           while ((getchar()) != '\n'); // clear input buffer
+
 		   if (search_key(dict, 400, key)){
 			   printf("Hit!\n");
-		   } else{
+		   }else{
 			   printf("Miss!\n");
 		   }
-	   } else if (input == 't'){
+	   } else if (input == 'v'){
 		   printf("Enter Text:\n");
 		   char text[10];
 		   scanf("%10s", &text[0]);
@@ -82,42 +112,15 @@ int main(void) {
 		   } else{
 			   printf("Miss!\n");
 		   }
-	   } else if (input == 'e'){
-		   printf("exit\n");
+	   } else if (input == 'q'){
+		   printf("quits manual search\n");
 	   } else{
-		   printf("unknown command\n");
+		   printf("\nplease either use 'k', 'v' or 'q'\n");
 	   }
-	} while (input != 'e');
+	} while (input != 'q');
 
 
-	do{
-	   printf("Search for specific (k)ey or (e)xit?\n");
-	   input = (char) getchar();
-	   while ((getchar()) != '\n'); // clear input buffer
-	   if (input == 'k'){
-		   printf("Enter Key:\n");
-		   int key = 0;
-		   scanf("%d", &key);
-		   while ((getchar()) != '\n'); // clear input buffer
-		   // sort dict
-		   qsort(dict, 400, sizeof(k_v_list), compare_list); // Something is happening...
-		   //search for key
-		   int *result;
-		   result = (int *) bsearch(&key, dict, 400, sizeof(k_v_list), compare_list);
-		   if (result == NULL){
-			   printf("Miss!\n");
-		   } else{
-			   printf("Hit!\n");
-		   }
-	   } else if (input == 'e'){
-		   printf("exit\n");
-	   } else{
-		   printf("unknown command\n");
-	   }
-	} while (input != 'e');
-
-
-	runtime_list(30000, 500);
+	// runtime_list(30000, 500);
 
 	return 0;
 }

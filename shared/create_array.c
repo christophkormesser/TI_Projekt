@@ -23,7 +23,9 @@ short *create_array(unsigned int size, short min, short max, enum direction dir)
 			printf("Direction: RANDOM\n[ ");
 			for(unsigned int i = 0; i < size; i++) {
 				array[i] = random_number(min, max);
-				printf("%hi  ", array[i]);
+                if(i < 20){
+                    printf("%hi  ", array[i]);
+                }
 			}
 			break;
 		case ASC:
