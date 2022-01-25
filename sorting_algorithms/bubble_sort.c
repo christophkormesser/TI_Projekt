@@ -37,7 +37,9 @@ double bubble_sort(short *array, int length) {
 
     printf("\nPrint sorted list: \n[");
     for (int i = 0; i < length; i++)    {
-        printf(" %d", cpyArr[i]);
+    	if (i < 15) {
+            printf(" %d", cpyArr[i]);
+    	}
     }
 
     printf(" ]\n");

@@ -70,7 +70,9 @@ double quick_sort(short *array, int l) {
     total_t = (double)(end_t - start_t)/CLOCKS_PER_SEC;
     printf("\nRuntime: %lf seconds\n", total_t);
     for(int q = 0; q < l; q++){
-        printf("%hi\t", sorted[q]);
+    	if (q < 15) {
+            printf("%hi\t", sorted[q]);
+    	}
     }
     printf("\n");
 

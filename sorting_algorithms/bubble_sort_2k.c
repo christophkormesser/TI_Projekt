@@ -5,15 +5,10 @@
 #include "bubble_sort_2k.h"
 
 double bubble_sort_2k(short *array, int length) {
-    printf("\n\n - [1].[3] - MICHAEL BUBLE SORT 2k:");
+    printf("\n\nMICHAEL BUBLE SORT 2k - ");
     clock_t start_t, end_t;
     double total_t;
     short *cpyArr = copy_array(array, length);
-
-    for (int i = 0; i < length ; ++i) {
-        printf("%d ", cpyArr[i]);
-
-    }
 
     start_t = clock();
     int sort = 1;
@@ -32,11 +27,13 @@ double bubble_sort_2k(short *array, int length) {
     end_t = clock();
 
     total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
-    printf("\n\nRuntime: %lf", total_t);
+    // printf("\n\nRuntime: %lf", total_t);
 
     printf("\nPrint sorted list: \n[");
     for (int i = 0; i < length; i++)    {
-        printf(" %d", cpyArr[i]);
+    	if (i < 15) {
+            printf(" %d", cpyArr[i]);
+    	}
     }
 
     printf(" ]\n");
