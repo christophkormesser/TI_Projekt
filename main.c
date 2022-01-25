@@ -26,17 +26,17 @@ int main(void) {
 
     // short min = -32767;
     // short max = 32767;
-    int array_2k = 2048;
+    int array_2k = 2000;
+    int array_2048 = 2048;
 
+    // 1.4
     check_runtime(array_2k);
 
     short *small_array = create_array(8, -32767, 32767, RANDOM);
     short *medium_array = create_array(16, -32767, 32767, RANDOM);
     short *large_array = create_array(64, -32767, 32767, RANDOM);
 
-    short *array_2k_ran = create_array(2048, -32767, 32767, RANDOM);
-    short *array_2k_asc = create_array(2048, -32767, 32767, ASC);
-    short *array_2k_dsc = create_array(2048, -32767, 32767, DSC);
+    short *array_2k_ran = create_array(array_2k, -32767, 32767, RANDOM);
 
     double ins_runtime_small = insertion_sort(small_array, 8);
     double ins_runtime_medium = insertion_sort(medium_array, 16);
@@ -54,9 +54,11 @@ int main(void) {
     double ms_runtime_medium = merge_sort(medium_array, 16);
     double ms_runtime_large = merge_sort(large_array, 64);
 
-    double bs2k_runtime_ran = bubble_sort_2k(array_2k_ran, array_2k);
-    double bs2k_runtime_asc = bubble_sort_2k(array_2k_asc, array_2k);
-    double bs2k_runtime_dsc = bubble_sort_2k(array_2k_dsc, array_2k);
+    // 1.3
+    for (int i = 0; i < 20; i++) {
+        double bs2k_runtime = bubble_sort_2k(array_2k_ran, array_2k);
+    }
+
 
     // free memory
     free(small_array);
@@ -64,8 +66,6 @@ int main(void) {
     free(large_array);
 
     free(array_2k_ran);
-    free(array_2k_asc);
-    free(array_2k_dsc);
 
     printf("\n\nRUNTIMES\n------\n");
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
