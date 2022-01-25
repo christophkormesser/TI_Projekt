@@ -27,66 +27,128 @@ int main(void) {
     // short min = -32767;
     // short max = 32767;
     int array_2k = 2000;
-    int array_2048 = 2048;
+    // int array_2048 = 2048;
 
     // 1.4
     check_runtime(array_2k);
 
-    short *small_array = create_array(8, -32767, 32767, RANDOM);
-    short *medium_array = create_array(16, -32767, 32767, RANDOM);
-    short *large_array = create_array(64, -32767, 32767, RANDOM);
+    short *array_small = create_array(8, -32767, 32767, RANDOM);
+    short *array_medium = create_array(16, -32767, 32767, RANDOM);
+    short *array_large = create_array(64, -32767, 32767, RANDOM);
+
+    short *array_1 = create_array(8, -32767, 32767, RANDOM);
+    short *array_2 = create_array(32, -32767, 32767, RANDOM);
+    short *array_3= create_array(128, -32767, 32767, RANDOM);
+    short *array_4 = create_array(8, -32767, 32767, RANDOM);
+    short *array_5 = create_array(32, -32767, 32767, RANDOM);
+    short *array_6 = create_array(128, -32767, 32767, RANDOM);
+    short *array_7 = create_array(8, -32767, 32767, RANDOM);
 
     short *array_2k_ran = create_array(array_2k, -32767, 32767, RANDOM);
 
-    double ins_runtime_small = insertion_sort(small_array, 8);
-    double ins_runtime_medium = insertion_sort(medium_array, 16);
-    double ins_runtime_large = insertion_sort(large_array, 64);
+    double ins_runtime_1 = insertion_sort(array_1, 8);
+    double ins_runtime_2 = insertion_sort(array_2, 16);
+    double ins_runtime_3 = insertion_sort(array_3, 64);
+    double ins_runtime_4 = insertion_sort(array_4, 8);
+    double ins_runtime_5 = insertion_sort(array_5, 16);
+    double ins_runtime_6 = insertion_sort(array_6, 64);
+    double ins_runtime_7 = insertion_sort(array_7, 64);
 
-    double bub_runtime_small = bubble_sort(small_array, 8);
-    double bub_runtime_medium = bubble_sort(medium_array, 16);
-    double bub_runtime_large = bubble_sort(large_array, 64);
+    double bub_runtime_1 = bubble_sort(array_1, 8);
+    double bub_runtime_2 = bubble_sort(array_2, 16);
+    double bub_runtime_3 = bubble_sort(array_3, 64);
+    double bub_runtime_4 = bubble_sort(array_4, 8);
+    double bub_runtime_5 = bubble_sort(array_5, 16);
+    double bub_runtime_6 = bubble_sort(array_6, 64);
+    double bub_runtime_7 = bubble_sort(array_7, 8);
 
-    double qs_runtime_small = quick_sort(small_array, 8);
-    double qs_runtime_medium = quick_sort(medium_array, 16);
-    double qs_runtime_large = quick_sort(large_array, 64);
+    double qs_runtime_1 = quick_sort(array_1, 8);
+    double qs_runtime_2 = quick_sort(array_2, 16);
+    double qs_runtime_3 = quick_sort(array_3, 64);
+    double qs_runtime_4 = quick_sort(array_4, 8);
+    double qs_runtime_5 = quick_sort(array_5, 16);
+    double qs_runtime_6 = quick_sort(array_6, 64);
+    double qs_runtime_7 = quick_sort(array_7, 8);
 
-    double ms_runtime_small = merge_sort(small_array, 8);
-    double ms_runtime_medium = merge_sort(medium_array, 16);
-    double ms_runtime_large = merge_sort(large_array, 64);
+    double ms_runtime_1 = merge_sort(array_1, 8);
+    double ms_runtime_2 = merge_sort(array_2, 16);
+    double ms_runtime_3 = merge_sort(array_3, 64);
+    double ms_runtime_4 = merge_sort(array_4, 8);
+    double ms_runtime_5 = merge_sort(array_5, 16);
+    double ms_runtime_6 = merge_sort(array_6, 64);
+    double ms_runtime_7 = merge_sort(array_7, 8);
 
     // 1.3
+    double sum = 0, min = 100, max = 0;
+
+    printf("\n\n\n\n\n");
     for (int i = 0; i < 20; i++) {
         double bs2k_runtime = bubble_sort_2k(array_2k_ran, array_2k);
+
+        sum += bs2k_runtime;
+
+        if (bs2k_runtime < min) {
+        	min = bs2k_runtime;
+        }
+        if (bs2k_runtime > max) {
+        	max = bs2k_runtime;
+        }
+
+        printf("\n%d Bubble Sort 12k : %lf secs\n", i, bs2k_runtime);
     }
 
+    printf("Average: %lf \n", sum/20);
+    printf("Minimum: %lf \n", min);
+    printf("Maximum: %lf \n", max);
 
     // free memory
-    free(small_array);
-    free(medium_array);
-    free(large_array);
+    free(array_1);
+    free(array_2);
+    free(array_3);
+    free(array_4);
+    free(array_5);
+    free(array_6);
+    free(array_7);
+
+    free(array_small);
+    free(array_medium);
+    free(array_large);
 
     free(array_2k_ran);
 
     printf("\n\nRUNTIMES\n------\n");
-    printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
-    printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
-    printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
+    printf("Insertion Sort 1: %lf secs\n", ins_runtime_1);
+    printf("Insertion Sort 2: %lf secs\n", ins_runtime_2);
+    printf("Insertion Sort 3: %lf secs\n", ins_runtime_3);
+    printf("Insertion Sort 4: %lf secs\n", ins_runtime_4);
+    printf("Insertion Sort 5: %lf secs\n", ins_runtime_5);
+    printf("Insertion Sort 6: %lf secs\n", ins_runtime_6);
+    printf("Insertion Sort 7: %lf secs\n", ins_runtime_7);
 
-    printf("Bubble Sort small: %lf secs\n", bub_runtime_small);
-    printf("Bubble Sort medium: %lf secs\n", bub_runtime_medium);
-    printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
 
-    printf("Quick Sort small: %lf secs\n", qs_runtime_small);
-    printf("Quick Sort medium: %lf secs\n", qs_runtime_medium);
-    printf("Quick Sort large: %lf secs\n", qs_runtime_large);
+    printf("Bubble Sort 1: %lf secs\n", bub_runtime_1);
+    printf("Bubble Sort 2: %lf secs\n", bub_runtime_2);
+    printf("Bubble Sort 3: %lf secs\n", bub_runtime_3);
+    printf("Bubble Sort 4: %lf secs\n", bub_runtime_4);
+    printf("Bubble Sort 5: %lf secs\n", bub_runtime_5);
+    printf("Bubble Sort 6: %lf secs\n", bub_runtime_6);
+    printf("Bubble Sort 7: %lf secs\n", bub_runtime_7);
 
-    printf("Merge Sort small: %lf secs\n", ms_runtime_small);
-    printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
-    printf("Merge Sort large: %lf secs\n", ms_runtime_large);
+    printf("Quick Sort 1: %lf secs\n", qs_runtime_1);
+    printf("Quick Sort 2: %lf secs\n", qs_runtime_2);
+    printf("Quick Sort 3: %lf secs\n", qs_runtime_3);
+    printf("Quick Sort 4: %lf secs\n", qs_runtime_4);
+    printf("Quick Sort 5: %lf secs\n", qs_runtime_5);
+    printf("Quick Sort 6: %lf secs\n", qs_runtime_6);
+    printf("Quick Sort 7: %lf secs\n", qs_runtime_7);
 
-    printf("Bubble Sort 2k Random: %lf secs\n", bs2k_runtime_ran);
-    printf("Bubble Sort 2k Ascending: %lf secs\n", bs2k_runtime_asc);
-    printf("Bubble Sort 2k Descending: %lf secs\n", bs2k_runtime_dsc);
+    printf("Merge Sort 1: %lf secs\n", ms_runtime_1);
+    printf("Merge Sort 2: %lf secs\n", ms_runtime_2);
+    printf("Merge Sort 3: %lf secs\n", ms_runtime_3);
+    printf("Merge Sort 4: %lf secs\n", ms_runtime_4);
+    printf("Merge Sort 5: %lf secs\n", ms_runtime_5);
+    printf("Merge Sort 6: %lf secs\n", ms_runtime_6);
+    printf("Merge Sort 7: %lf secs\n", ms_runtime_7);
 
     printf("search algos\n");
 
