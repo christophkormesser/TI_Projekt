@@ -23,7 +23,7 @@ short *create_array(unsigned int size, short min, short max, enum direction dir)
 			printf("Direction: RANDOM\n[ ");
 			for(unsigned int i = 0; i < size; i++) {
 				array[i] = random_number(min, max);
-                if(i < 20){
+                if(i < 15){
                     printf("%hi  ", array[i]);
                 }
 			}
@@ -35,7 +35,9 @@ short *create_array(unsigned int size, short min, short max, enum direction dir)
             max = min + range;
             for(unsigned int i = 0; i < size; i++){
                 array[i] = random_number(min, max);
-                printf("%hi  ", array[i]);
+                if(i < 15){
+                    printf("%hi  ", array[i]);
+                }
                 min = max;      // new maximum
                 max += range;   // new minimum
             }
@@ -47,7 +49,9 @@ short *create_array(unsigned int size, short min, short max, enum direction dir)
             min = max - range;
 			for(unsigned int i = 0; i < size; i++){
 				array[i] = random_number(min, max);
-				printf("%hi  ", array[i]);
+                if(i < 15){
+                    printf("%hi  ", array[i]);
+                }
                 max = min;      // new maximum
                 min -= range;   // new minimum
 			}
@@ -57,22 +61,6 @@ short *create_array(unsigned int size, short min, short max, enum direction dir)
             break;
 	}
 
-    // Aufsteigend
-    // [ 7, 9(min n>7), ]
-
-    /*
-    int random_number(int min, int max) {
-    	int num = rand() % (max-min) + min;
-    	return num;
-    }
-
-    void print_array(int l, int *a, char t[]) {
-    	printf("Print List\n");
-    	for (int i = 0; i < l; i += 1) {
-    		printf("%s %4d ", t, a[i]);
-    	}
-    	printf("\n");
-    } */
     printf("]\n");
 
     return array;
