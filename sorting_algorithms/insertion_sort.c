@@ -6,13 +6,11 @@
 
 
 double insertion_sort(short *array, int length){
-    printf("\n==Insertion Sort==\n");
+    printf("\n\n==Insertion Sort==\n");
     // measure runtime
     clock_t start_t, end_t;
     double total_t;
 
-
-    printf("\n\n");
     short *new = copy_array(array, length);
 
 

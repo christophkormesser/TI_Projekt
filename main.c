@@ -58,19 +58,19 @@ int main(void) {
     printf("\n\nRUNTIMES\n------\n");
     printf("Insertion Sort small: %lf secs\n", ins_runtime_small);
     printf("Insertion Sort medium: %lf secs\n", ins_runtime_medium);
-    printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
+    //printf("Insertion Sort large: %lf secs\n", ins_runtime_large);
 
     printf("Bubble Sort small: %lf secs\n", bub_runtime_small);
     printf("Bubble Sort medium: %lf secs\n", bub_runtime_medium);
-    printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
+    //printf("Bubble Sort large: %lf secs\n", bub_runtime_large);
 
     printf("Quick Sort small: %lf secs\n", qs_runtime_small);
     printf("Quick Sort medium: %lf secs\n", qs_runtime_medium);
-    printf("Quick Sort large: %lf secs\n", qs_runtime_large);
+    //printf("Quick Sort large: %lf secs\n", qs_runtime_large);
 
     printf("Merge Sort small: %lf secs\n", ms_runtime_small);
     printf("Merge Sort medium: %lf secs\n", ms_runtime_medium);
-    printf("Merge Sort large: %lf secs\n", ms_runtime_large);
+    //printf("Merge Sort large: %lf secs\n", ms_runtime_large);
 /*
     printf("Merge Sort small: %lf secs\n", bs2k_runtime_ran);
     printf("Merge Sort medium: %lf secs\n", bs2k_runtime_asc);
@@ -90,12 +90,12 @@ int main(void) {
     do{
        printf("\n(k) search with key\n(v) search with value\n(q) quit\n: ");
 	   input = (char) getchar();
-	   while ((getchar()) != '\n'); // clear input buffer
+	   while ((getchar()) != '\n'){}; // clear input buffer
 	   if (input == 'k'){
 		   printf("Enter Key:\n");
 		   int key = 0;
 		   scanf("%d", &key);
-           while ((getchar()) != '\n'); // clear input buffer
+           while ((getchar()) != '\n'){}; // clear input buffer
 
 		   if (search_key(dict, 400, key)){
 			   printf("Hit!\n");

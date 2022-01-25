@@ -5,7 +5,7 @@
 #include "bubble_sort.h"
 
 double bubble_sort(short *array, int length) {
-    printf("MICHAEL BUBBLE SORT:\n");
+    printf("\n\nMICHAEL BUBBLE SORT:\n");
     clock_t start_t, end_t;
     double total_t;
     short *cpyArr = copy_array(array, length);
@@ -20,7 +20,7 @@ double bubble_sort(short *array, int length) {
     int sort = 1;
     do{
         sort = 1;
-        for (int j = 0; j < 64-1; j++){
+        for (int j = 0; j < length-1; j++){
             if (cpyArr[j] > cpyArr[j + 1])  {
                 int backup = cpyArr[j];
                 cpyArr[j] = cpyArr[j + 1];
@@ -36,7 +36,7 @@ double bubble_sort(short *array, int length) {
     //printf("\n\nRuntime: %lf", total_t);
 
     printf("\nPrint sorted list: \n[");
-    for (int i = 0; i < 64; i++)    {
+    for (int i = 0; i < length; i++)    {
         printf(" %d", cpyArr[i]);
     }
 
